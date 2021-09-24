@@ -12,5 +12,10 @@ public class BindingMod implements ModInitializer {
 		// Order should not matter since blocks register their own items
 		Registration.registerItems();
 		Registration.registerBlocks();
+
+		Registration.registerBlockEntities();
+		Registration.registerScreenHandlers();
+		Registration.registerParticleTypes();
+		Registration.registerRecipeTypes();
 	}
 }

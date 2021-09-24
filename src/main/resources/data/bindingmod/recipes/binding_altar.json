@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ggg",
+    "sss"
+  ],
+  "key": {
+    "g": {
+      "item": "minecraft:gold_block"
+    },
+    "s": {
+      "item": "minecraft:smooth_stone"
+    }
+  },
+  "result": {
+    "item": "bindingmod:binding_altar",
+    "count": 1
+  }
+}

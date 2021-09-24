@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "bindingmod:block/lightning_altar_model" }
+  }
+}

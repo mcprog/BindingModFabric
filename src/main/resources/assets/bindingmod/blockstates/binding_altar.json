@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "bindingmod:block/binding_altar_model" }
+  }
+}

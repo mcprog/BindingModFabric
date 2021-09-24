@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "bindingmod:integration_generator_item"
+          "name": "bindingmod:volatile_obsidian"
         }
       ],
       "conditions": [

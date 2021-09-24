@@ -1,6 +1,9 @@
 {
   "item.bindingmod.binding_clay_item": "Binding Clay",
-  "block.bindingmod.integration_generator_block": "Integration Generator",
+  "block.bindingmod.integration_generator": "Integration Generator",
+  "block.bindingmod.binding_altar": "Binding Altar",
+  "block.bindingmod.volatile_obsidian": "Volatile Obsidian",
+  "block.bindingmod.lightning_altar": "Lightning Altar",
 
   "itemGroup.bindingmod.main": "Binding Mod"
 }

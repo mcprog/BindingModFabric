@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "fg",
+    "gf"
+  ],
+  "key": {
+    "f": {
+      "item": "minecraft:crimson_fungus"
+    },
+    "g": {
+      "item": "minecraft:glowstone"
+    }
+  },
+  "result": {
+    "item": "bindingmod:bright_fungus",
+    "count": 2
+  }
+}

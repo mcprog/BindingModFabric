@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "bindingmod:integration_generator_block"
+    "bindingmod:integration_generator",
+    "bindingmod:binding_altar",
+    "bindingmod:volatile_obsidian",
+    "bindingmod:lightning_altar"
   ]
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "bindingmod:block/volatile_obsidian"
+  }
+}
