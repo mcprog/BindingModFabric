@@ -42,7 +42,7 @@ public class IntegrationRecipeSerializer implements RecipeSerializer<Integration
 
     @Override
     public void write(PacketByteBuf buf, IntegrationRecipe recipe) {
-        recipe.getInput().write(buf);
+        recipe.getInput();
         buf.writeItemStack(recipe.getOutput());
     }
 
