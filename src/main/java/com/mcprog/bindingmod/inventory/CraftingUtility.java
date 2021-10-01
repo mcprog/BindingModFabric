@@ -22,6 +22,7 @@ import java.util.Optional;
 
 public class CraftingUtility {
 
+    // Unused. May be used in crafting based machines in future
     public static void updateCraftingResult(ScreenHandler handler, World world, PlayerEntity player, RecipeType recipeType, CraftingInventory craftingInventory, CraftingResultInventory resultInventory) {
         if (!world.isClient) {
             System.out.println("Update crafting result called");

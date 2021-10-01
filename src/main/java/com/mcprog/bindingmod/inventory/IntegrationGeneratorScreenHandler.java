@@ -24,51 +24,21 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class IntegrationGeneratorScreenHandler extends AbstractRecipeScreenHandler<Inventory> {
+public class IntegrationGeneratorScreenHandler extends SimpleRecipeScreenHandler {
 
 
     public static final int PROCESS_TIME = 100;
-
-    private final Inventory inventory;
-    private final PropertyDelegate propertyDelegate;
-    protected final World world;
-    private final PlayerEntity player;
-    private final PlayerInventory playerInventory;
 
     public IntegrationGeneratorScreenHandler(int syncId, PlayerInventory playerInventory) {
         this(syncId, playerInventory, new SimpleInventory(2), new ArrayPropertyDelegate(4));
     }
 
     public IntegrationGeneratorScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
-        super(Registration.INTEGRATION_GENERATOR_SCREEN_HANDLER, syncId);
-        this.inventory = inventory;
-        checkSize(inventory, 2);
-        checkDataCount(propertyDelegate, 4);
-        this.propertyDelegate = propertyDelegate;
-        this.player = playerInventory.player;
-        this.world = player.world;
-        this.playerInventory = playerInventory;
-
-        setupMachineSlots();
-        setupPlayerSlots();
-
-        this.addProperties(propertyDelegate);
+        super(Registration.INTEGRATION_GENERATOR_SCREEN_HANDLER, syncId, playerInventory, inventory, propertyDelegate, 2, 4);
     }
 
-    void setupPlayerSlots() {
-        int k;
-        for(k = 0; k < 3; ++k) {
-            for(int j = 0; j < 9; ++j) {
-                this.addSlot(new Slot(this.playerInventory, j + k * 9 + 9, 8 + j * 18, 84 + k * 18));
-            }
-        }
-
-        for(k = 0; k < 9; ++k) {
-            this.addSlot(new Slot(this.playerInventory, k, 8 + k * 18, 142));
-        }
-    }
-
-    void setupMachineSlots() {
+    @Override
+    protected void setupMachineSlots() {
         this.addSlot(new Slot(this.inventory, 0, 32, 34));
         this.addSlot(new FurnaceOutputSlot(this.player, this.inventory, 1, 129, 34));
     }
@@ -135,13 +105,6 @@ public class IntegrationGeneratorScreenHandler extends AbstractRecipeScreenHandl
     }
 
     @Override
-    public void populateRecipeFinder(RecipeMatcher finder) {
-        if (this.inventory instanceof RecipeInputProvider) {
-            ((RecipeInputProvider)this.inventory).provideRecipeInputs(finder);
-        }
-    }
-
-    @Override
     public void clearCraftingSlots() {
         this.getSlot(0).setStack(ItemStack.EMPTY);
         this.getSlot(1).setStack(ItemStack.EMPTY);
@@ -180,10 +143,5 @@ public class IntegrationGeneratorScreenHandler extends AbstractRecipeScreenHandl
     @Override
     public boolean canInsertIntoSlot(int index) {
         return index != 1;
-    }
-
-    @Override
-    public boolean canUse(PlayerEntity player) {
-        return this.inventory.canPlayerUse(player);
     }
 }

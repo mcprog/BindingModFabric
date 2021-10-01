@@ -19,7 +19,8 @@ public class RegistrationClient {
     }
 
     public static void setupBlockRenderLayerMap() {
-        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), Registration.BRIGHT_FUNGUS);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), Registration.BRIGHT_FUNGUS, Registration.FUNGUS_TORCH_BLOCK);
+
     }
 
     public static void registerParticles() {

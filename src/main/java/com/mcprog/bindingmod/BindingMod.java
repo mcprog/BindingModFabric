@@ -9,13 +9,15 @@ public class BindingMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// Order should not matter since blocks register their own items
+		Registration.registerParticleTypes();
+
+		// Order of these two should not matter since blocks register their own items
 		Registration.registerItems();
 		Registration.registerBlocks();
 
 		Registration.registerBlockEntities();
 		Registration.registerScreenHandlers();
-		Registration.registerParticleTypes();
+
 		Registration.registerRecipeTypes();
 	}
 }

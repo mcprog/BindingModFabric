@@ -30,6 +30,9 @@ public class Registration {
     private static final Identifier BINDING_ALTAR_ID = new Identifier(BindingMod.MODID, "binding_altar");
     private static final Identifier LIGHTNING_ALTAR_ID = new Identifier(BindingMod.MODID, "lightning_altar");
 
+    /* PARTICLES */
+    public static final DefaultParticleType FUNGUS_FLAME = FabricParticleTypes.simple();
+
     /* ITEMS */
     public static final Item BINDING_CLAY_ITEM = new Item(new FabricItemSettings().group(Tabs.MAIN_TAB));
 
@@ -39,6 +42,7 @@ public class Registration {
     public static final Block VOLATILE_OBSIDIAN_BLOCK = new VolatileObsidianBlock();
     public static final Block BRIGHT_FUNGUS = new BrightFungusBlock();
     public static final Block LIGHTNING_ALTAR_BLOCK = new LightningAltarBlock();
+    public static final Block FUNGUS_TORCH_BLOCK = new FungusTorchBlock();
 
 
     /* BLOCK ENTITIES */
@@ -49,8 +53,7 @@ public class Registration {
     /* SCREEN HANDLERS */
     public static ScreenHandlerType<IntegrationGeneratorScreenHandler> INTEGRATION_GENERATOR_SCREEN_HANDLER;
 
-    /* PARTICLES */
-    public static final DefaultParticleType FUNGUS_FLAME = FabricParticleTypes.simple();
+
 
 
     public static void registerItems() {
@@ -63,6 +66,7 @@ public class Registration {
         registerBlock(VOLATILE_OBSIDIAN_BLOCK, new Identifier(BindingMod.MODID, "volatile_obsidian"), Tabs.MAIN_TAB);
         registerBlock(BRIGHT_FUNGUS, new Identifier(BindingMod.MODID, "bright_fungus"), Tabs.MAIN_TAB);
         registerBlock(LIGHTNING_ALTAR_BLOCK, LIGHTNING_ALTAR_ID, Tabs.MAIN_TAB);
+        registerBlock(FUNGUS_TORCH_BLOCK, new Identifier(BindingMod.MODID, "fungus_torch"), Tabs.MAIN_TAB);
     }
 
     public static void registerBlockEntities() {

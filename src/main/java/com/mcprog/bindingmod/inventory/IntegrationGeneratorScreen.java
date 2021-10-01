@@ -30,7 +30,6 @@ public class IntegrationGeneratorScreen extends SimpleScreen{
         int l;
 
         l = ((IntegrationGeneratorScreenHandler)this.handler).getProcessTime();
-        System.out.println("Process Timer value: " + l);
         this.drawTexture(matrices, i + 79, j + 34, 176, 14, l + 1, 16);
     }
 }
