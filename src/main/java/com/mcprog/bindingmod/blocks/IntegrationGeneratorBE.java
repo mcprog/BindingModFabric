@@ -66,6 +66,16 @@ public class IntegrationGeneratorBE extends AbstractFurnaceBlockEntity {
         return super.writeNbt(nbt);
     }
 
+    @Override
+    public boolean canExtract(int slot, ItemStack stack, Direction dir) {
+        return dir == Direction.DOWN && slot == 1;
+    }
+
+    @Override
+    public boolean canInsert(int slot, ItemStack stack, @Nullable Direction dir) {
+        return slot != 1 && dir != Direction.DOWN;
+    }
+
     public static void tick(World world, BlockPos pos, BlockState state, IntegrationGeneratorBE blockEntity) {
 
         ItemStack inputStack = blockEntity.inventory.get(0);

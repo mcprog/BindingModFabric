@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "f",
+    "s"
+  ],
+  "key": {
+    "f": {
+      "item": "bindingmod:bright_fungus"
+    },
+    "s": {
+      "tag": "c:wood_sticks"
+    }
+  },
+  "result": {
+    "item": "bindingmod:fungus_torch",
+    "count": 4
+  }
+}

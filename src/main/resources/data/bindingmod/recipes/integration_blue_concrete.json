@@ -1,0 +1,7 @@
+{
+  "type": "bindingmod:integration_recipe",
+  "input" : {
+    "item": "minecraft:blue_concrete_powder"
+  },
+  "result": "minecraft:blue_concrete"
+}

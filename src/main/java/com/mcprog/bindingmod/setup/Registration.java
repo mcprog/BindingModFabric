@@ -3,6 +3,7 @@ package com.mcprog.bindingmod.setup;
 import com.mcprog.bindingmod.BindingMod;
 import com.mcprog.bindingmod.blocks.*;
 import com.mcprog.bindingmod.inventory.IntegrationGeneratorScreenHandler;
+import com.mcprog.bindingmod.items.PackingTapeItem;
 import com.mcprog.bindingmod.recipes.IntegrationRecipe;
 import com.mcprog.bindingmod.recipes.IntegrationRecipeSerializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -35,6 +36,7 @@ public class Registration {
 
     /* ITEMS */
     public static final Item BINDING_CLAY_ITEM = new Item(new FabricItemSettings().group(Tabs.MAIN_TAB));
+    public static final Item PACKING_TAPE_ITEM = new PackingTapeItem();
 
     /* BLOCKS */
     public static final Block INTEGRATION_GENERATOR_BLOCK = new IntegrationGeneratorBlock();
@@ -58,6 +60,7 @@ public class Registration {
 
     public static void registerItems() {
         registerItem(BINDING_CLAY_ITEM, "binding_clay_item");
+        registerItem(PACKING_TAPE_ITEM, "packing_tape");
     }
 
     public static void registerBlocks() {

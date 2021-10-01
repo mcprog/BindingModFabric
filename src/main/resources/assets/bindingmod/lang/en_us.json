@@ -1,9 +1,13 @@
 {
   "item.bindingmod.binding_clay_item": "Binding Clay",
+  "item.bindingmod.packing_tape": "Packing Tape",
+
   "block.bindingmod.integration_generator": "Integration Generator",
   "block.bindingmod.binding_altar": "Binding Altar",
   "block.bindingmod.volatile_obsidian": "Volatile Obsidian",
   "block.bindingmod.lightning_altar": "Lightning Altar",
+  "block.bindingmod.fungus_torch": "Fungus Torch",
+  "block.bindingmod.bright_fungus": "Bright Fungus",
 
   "itemGroup.bindingmod.main": "Binding Mod"
 }
