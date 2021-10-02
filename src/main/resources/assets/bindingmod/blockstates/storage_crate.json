@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "bindingmod:block/storage_crate"
+    }
+  }
+}

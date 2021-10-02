@@ -3,6 +3,7 @@ package com.mcprog.bindingmod.setup;
 import com.mcprog.bindingmod.BindingMod;
 import com.mcprog.bindingmod.inventory.IntegrationGeneratorScreen;
 import com.mcprog.bindingmod.inventory.SimpleScreen;
+import com.mcprog.bindingmod.inventory.StorageCrateScreen;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
@@ -10,12 +11,14 @@ import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.screen.PlayerScreenHandler;
+import net.minecraft.screen.ScreenHandler;
 import net.minecraft.util.Identifier;
 
 public class RegistrationClient {
 
     public static void registerScreens() {
         ScreenRegistry.register(Registration.INTEGRATION_GENERATOR_SCREEN_HANDLER, IntegrationGeneratorScreen::new);
+        ScreenRegistry.register(Registration.STORAGE_CRATE_SCREEN_HANDLER, StorageCrateScreen::new);
     }
 
     public static void setupBlockRenderLayerMap() {

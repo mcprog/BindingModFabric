@@ -1,0 +1,15 @@
+{
+  "type": "bindingmod:packing_tape_recipe",
+  "result": {
+    "item": "bindingmod:storage_crate",
+    "count": 1
+  },
+  "ingredients": [
+    {
+      "item": "bindingmod:packing_tape"
+    },
+    {
+      "item": "minecraft:barrel"
+    }
+  ]
+}

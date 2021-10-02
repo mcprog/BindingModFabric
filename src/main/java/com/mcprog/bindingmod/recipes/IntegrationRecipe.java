@@ -49,11 +49,16 @@ public class IntegrationRecipe extends AbstractCookingRecipe {
     }
 
 
-    public static class Type implements RecipeType<IntegrationRecipe> {
+    public static class Type implements RecipeType<IntegrationRecipe>, CustomRecipeType {
 
         private Type() {} // singleton
         public static final Type INSTANCE = new Type();
 
         public static final String ID = "integration_recipe";
+
+        @Override
+        public CustomRecipeType getInstance() {
+            return INSTANCE;
+        }
     }
 }

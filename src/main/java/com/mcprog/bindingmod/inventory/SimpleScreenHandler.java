@@ -18,35 +18,24 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class SimpleScreenHandler extends ScreenHandler {
+public abstract class SimpleScreenHandler extends ScreenHandler{
 
     protected final Inventory inventory;
-    protected final ScreenHandlerContext context;
 
-    public SimpleScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(IntegrationGeneratorBE.INV_SIZE), ScreenHandlerContext.EMPTY);
+    public SimpleScreenHandler(ScreenHandlerType type, int syncId, PlayerInventory playerInventory, int expectedInvSize) {
+        this(type, syncId, playerInventory, new SimpleInventory(expectedInvSize), expectedInvSize);
     }
 
-    public SimpleScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, ScreenHandlerContext context) {
-        super(Registration.INTEGRATION_GENERATOR_SCREEN_HANDLER, syncId);
-        System.out.println("Initializing simple screen handler");
-        checkSize(inventory, IntegrationGeneratorBE.INV_SIZE);
+    public SimpleScreenHandler(ScreenHandlerType type,int syncId, PlayerInventory playerInventory, Inventory inventory, int expectedInvSize) {
+        super(type, syncId);
+        checkSize(inventory, expectedInvSize);
         this.inventory = inventory;
-        this.context = context;
 
         inventory.onOpen(playerInventory.player);
-
-        setupSlots();
-
-        setupPlayerSlots(IntegrationGeneratorBE.INV_SIZE, playerInventory);
-
-        System.out.println("Setup of slots for screen of inventory size: " + IntegrationGeneratorBE.INV_SIZE);
-
+        setupPlayerSlots(playerInventory);
     }
 
-    protected abstract void setupSlots();
-
-    protected void setupPlayerSlots(int invSize, PlayerInventory playerInventory) {
+    protected void setupPlayerSlots(PlayerInventory playerInventory) {
         int m;
         int l;
 
@@ -94,9 +83,4 @@ public abstract class SimpleScreenHandler extends ScreenHandler {
         return inventory.canPlayerUse(player);
     }
 
-    @Nullable
-    public static NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world, BlockPos pos) {
-        BlockEntity blockEntity = world.getBlockEntity(pos);
-        return blockEntity instanceof NamedScreenHandlerFactory ? (NamedScreenHandlerFactory)blockEntity : null;
-    }
 }

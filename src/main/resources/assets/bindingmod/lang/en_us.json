@@ -8,6 +8,7 @@
   "block.bindingmod.lightning_altar": "Lightning Altar",
   "block.bindingmod.fungus_torch": "Fungus Torch",
   "block.bindingmod.bright_fungus": "Bright Fungus",
+  "block.bindingmod.storage_crate": "Storage Crate",
 
   "itemGroup.bindingmod.main": "Binding Mod"
 }
